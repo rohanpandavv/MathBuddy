@@ -8,13 +8,33 @@ load_dotenv()
 
 @tool
 def addition(a: float, b: float) -> str:
-    """Useful for performing basic arithmetic calculations with numbers."""
+    """Useful for performing basic addition of 2 numbers."""
     return f"The sum of {a} and {b} is {a + b}"
 
-def main():
-    model = ChatOpenAI(temperature=0)
+@tool
+def subtraction(a: float, b:float) -> str:
+    """Useful for performing basic subtraction of 2 numbers."""
+    return f"The difference of {a} and {b} is {a - b}"
 
-    tools = [addition]
+@tool
+def multiplication(a: float, b: float) -> str:
+    """Useful for performing basic multiplication of 2 numbers."""
+    return f"The product of {a} and {b} is {a * b}"
+
+@tool
+def division(a: float, b: float) -> str:
+    """Useful for performing basic division of 2 numbers."""
+    return f"The division of {a} and {b} is {a / b}"
+
+@tool
+def remainder(a: float, b: float) -> str:
+    """Useful for finding out the remainder of 2 numbers."""
+    return f"The remainder of {a} and {b} is {a % b}"
+
+def main():
+    model = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0125")
+
+    tools = [addition, subtraction, division, multiplication, remainder]
     agent_executor = create_react_agent(model, tools)
 
     print("Welcome, I am your AI assistant.")
