@@ -49,7 +49,7 @@ def main():
     while True:
         user_input = input("\nYou: ").strip()
 
-        if user_input == "quit":
+        if user_input.lower() == "quit":
             break
 
         print("\nAssistant: ", end="")

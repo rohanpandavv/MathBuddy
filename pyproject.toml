@@ -1,7 +1,7 @@
 [project]
 name = "math-with-ai"
 version = "0.1.0"
-description = "Add your description here"
+description = "A simple AI-powered math assistant using LangChain and OpenAI, capable of handling basic arithmetic operations and natural conversation."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
