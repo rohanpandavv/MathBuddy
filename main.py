@@ -3,6 +3,7 @@ from langchain_openai import ChatOpenAI
 from langchain.tools import tool
 from langgraph.prebuilt import create_react_agent
 from dotenv import load_dotenv
+import math
 
 load_dotenv()
 
@@ -31,10 +32,15 @@ def remainder(a: float, b: float) -> str:
     """Useful for finding out the remainder of 2 numbers."""
     return f"The remainder of {a} and {b} is {a % b}"
 
+@tool
+def root(a: float) -> str:
+    """Useful for finding out the square root of a number."""
+    return f"The square root of {a} is {math.sqrt(a)}"
+
 def main():
     model = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0125")
 
-    tools = [addition, subtraction, division, multiplication, remainder]
+    tools = [addition, subtraction, division, multiplication, remainder, root]
     agent_executor = create_react_agent(model, tools)
 
     print("Welcome, I am your AI assistant.")
