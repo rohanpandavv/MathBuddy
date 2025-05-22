@@ -36,8 +36,8 @@ A simple AI-powered math assistant using [LangChain](https://python.langchain.co
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/rohanpandavv/math-with-ai.git
-    cd math-with-ai
+    git clone https://github.com/rohanpandavv/MathBuddy.git
+    cd MathBuddy
     ```
 
 2. **Install [uv](https://github.com/astral-sh/uv) (if you don’t have it):**
