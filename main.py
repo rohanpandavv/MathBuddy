@@ -8,19 +8,23 @@ import math
 load_dotenv()
 
 @tool
-def addition(a: float, b: float) -> str:
-    """Useful for performing basic addition of 2 numbers."""
-    return f"The sum of {a} and {b} is {a + b}"
+def addition(numbers: list[float]) -> str:
+    """Useful for performing addition of numbers. There should be at least two numbers in `numbers` list."""
+    if len(numbers) < 2:
+        return "Please pass at least two numbers to perform addition operation on."
+    result = sum(numbers)
+    return f"The sum of {numbers} is {result}"
 
 @tool
-def subtraction(a: float, b:float) -> str:
-    """Useful for performing basic subtraction of 2 numbers."""
-    return f"The difference of {a} and {b} is {a - b}"
+def subtraction(numbers: list[float]) -> str:
+    """Useful for performing subtraction of numbers. There should be at least two numbers in `numbers` list."""
+    result = numbers[0] - sum(numbers[1:])
+    return f"The difference of {numbers} is {result}"
 
 @tool
-def multiplication(a: float, b: float) -> str:
-    """Useful for performing basic multiplication of 2 numbers."""
-    return f"The product of {a} and {b} is {a * b}"
+def multiplication(numbers: list[float]) -> str:
+    """Useful for performing addition of numbers. There should be at least two numbers in `numbers` list."""
+    return f"The product of {numbers} is {math.prod(numbers)}"
 
 @tool
 def division(a: float, b: float) -> str:
